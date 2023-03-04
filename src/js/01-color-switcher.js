@@ -19,8 +19,8 @@ function startBtnColor() {
   return;
 };
   isActive = true;
-    startBtn.classList.add('button-color');
-    stopBtn.classList.remove('button-color');
+    startBtn.classList.add('disabled');
+    stopBtn.classList.remove('disabled');
 
   timerId = setInterval(() => {
     bodyColor.style.backgroundColor = getRandomHexColor();
@@ -31,7 +31,7 @@ function startBtnColor() {
 function stopBtnColor() {
   isActive = false;
 
-    stopBtn.classList.add('button-color');
-    startBtn.classList.remove('button-color');
+    stopBtn.classList.add('disabled');
+    startBtn.classList.remove('disabled');
   clearInterval(timerId);
 };

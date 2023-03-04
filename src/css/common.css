@@ -17,7 +17,7 @@ img {
   max-width: 100%;
 }
 
-.button-color {
+.disabled {
   text-decoration: none;
   text-align: center;
   opacity: .5;    
