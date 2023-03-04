@@ -16,3 +16,19 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.button-color {
+  text-decoration: none;
+  text-align: center;
+  opacity: .5;    
+  cursor: pointer;
+}
+
+
+button {
+  width: 100px;  
+  height: 50px;
+  background-color: white;  
+  border: 1px solid gray; 
+  cursor: pointer;
+}
