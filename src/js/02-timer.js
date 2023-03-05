@@ -7,14 +7,15 @@ import 'flatpickr/dist/flatpickr.min.css';
 let offerTime;
 
 const  inputEl = document.querySelector('#datetime-picker');
-const  startEl = document.querySelector('[data-start]');
+const  startBtnEl = document.querySelector('[data-start]');
 const  daysEl = document.querySelector('[data-days]');
 const  hoursEl = document.querySelector('[data-hours]');
 const  minutesEl = document.querySelector('[data-minutes]');
 const  secondsEl = document.querySelector('[data-seconds]');
 
+startBtnEl.classList.add('disabled');
 
-startEl.addEventListener('click', () => {
+startBtnEl.addEventListener('click', () => {
   timer.start(offerTime);
 });
 
@@ -26,10 +27,10 @@ const options = {
   onClose(selectedDates) {
     offerTime = selectedDates[0];
     if (selectedDates[0] < options.defaultDate) {
-      startEl.classList.add('disabled');
+      startBtnEl.classList.add('disabled');
       Notify.failure('Please choose a date in the future');
     } else {
-      startEl.classList.remove('disabled');
+      startBtnEl.classList.remove('disabled');
     }
   },
 };
@@ -41,7 +42,7 @@ const timer = {
 start() {
   const currentTime = Date.now();
   inputEl.classList.add('disabled');
-  startEl.classList.add('disabled');
+  startBtnEl.classList.add('disabled');
   this.intervalId = setInterval(() => {
     const currentTime = Date.now();
     const deltaTime = offerTime - currentTime;
@@ -64,7 +65,7 @@ start() {
 }
 
 function  pad(value) {
-    return String(value.toString().padStart(2, '0'));
+    return String(value).padStart(2, '0');
 }
 
 function convertMs(ms) {
@@ -79,6 +80,6 @@ function convertMs(ms) {
   const seconds = pad(Math.floor((((ms % day) % hour) % minute) / second));
   
   return { days, hours, minutes, seconds };
-}
+};
 
 const fp = flatpickr(inputEl, options);

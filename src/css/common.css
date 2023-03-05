@@ -21,7 +21,9 @@ img {
   text-decoration: none;
   text-align: center;
   opacity: .5;    
-  cursor: pointer;
+  /* cursor: pointer; */
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 
