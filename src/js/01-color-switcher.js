@@ -10,7 +10,7 @@ const bodyColor = document.querySelector('body');
 stopBtn.classList.add('disabled');
 
 let timerId = null;
-isActive = false;
+let isActive = false;
 
 startBtn.addEventListener("click", startBtnColor);
 stopBtn.addEventListener("click", stopBtnColor);
