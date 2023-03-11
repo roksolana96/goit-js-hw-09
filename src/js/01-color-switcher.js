@@ -7,10 +7,10 @@ const startBtn = document.querySelector('button[data-start]');
 const stopBtn = document.querySelector('button[data-stop]');
 const bodyColor = document.querySelector('body');
 
+stopBtn.classList.add('disabled');
 
 let timerId = null;
 isActive = false;
-stopBtn.classList.add('disabled');
 
 startBtn.addEventListener("click", startBtnColor);
 stopBtn.addEventListener("click", stopBtnColor);
